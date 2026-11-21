@@ -74,7 +74,8 @@ helm upgrade --install karpenter oci://public.ecr.aws/karpenter/karpenter \
   --version 1.0.0 --namespace karpenter --create-namespace
 
 # 4. Deploy a sample workload
-kubectl apply -f https://raw.githubusercontent.com/sepkascurty-cpu/aws-eks-kubernetes-guide/main/examples/nginx-deployment.yaml
+kubectl create deployment demo-nginx --image=nginx:1.27
+kubectl expose deployment demo-nginx --port=80 --type=LoadBalancer
 kubectl get svc -w   # wait for the ALB hostname
 ```
 
