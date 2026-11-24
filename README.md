@@ -9,6 +9,10 @@
 
 ---
 
+## 🌍 In plain words — what is this, really?
+
+Think of a busy shipping port: hundreds of standard containers arrive, and someone has to decide which crane loads each one, which ship it goes on, and what to do when a crane breaks down mid-shift. Kubernetes is the port's operating system for software containers — it schedules each container onto a machine, restarts it if it crashes, and spreads copies around so one broken machine never sinks the shipment. Running that control system yourself is hard, so EKS is like hiring Amazon as the port authority: AWS runs the control tower (the Kubernetes control plane) across three zones, keeps it patched and highly available, and you only manage the docks and cranes — the worker nodes — plus what cargo you ship. Your containers are pulled from ECR, the port's warehouse, and IAM controls which crew member may open which gate, even down to a single pod through IRSA. Tools like Karpenter act as the smart harbour master, bringing in exactly the right size of crane only when cargo is waiting and sending it away when the port is quiet. In short: you bring the workloads, EKS keeps the Kubernetes brain running.
+
 ## What EKS actually gives you
 
 | Piece | Who runs it | What you get |
@@ -126,12 +130,6 @@ One cluster per environment is the norm; don't create a cluster per microservice
 
 ---
 
-## Quiz
-
-Think you know EKS? Five questions in [`quiz.md`](quiz.md) — control-plane HA, IRSA, Karpenter, upgrades, and node security. Answers are collapsed, try them first.
-
----
-
 ## Changelog
 
-- **2026-11-22** — Initial guide: architecture, quickstart, production checklist, quiz.
+- **2026-11-22** — Initial guide: architecture, quickstart, production checklist.
